@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,20 +9,30 @@
     <TextView
         android:id="@+id/txtViewCoffeeReq"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="27dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="19dp"
-        android:text="What kind of coffee?" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="17dp"
+        android:text="What kind of coffee?"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="206dp"
-        android:layout_height="127dp"
+        android:layout_height="0dp"
         android:layout_alignStart="@+id/txtViewCoffeeReq"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="52dp">
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="93dp"
+        app:layout_constraintBottom_toTopOf="@+id/creamChkBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/radioDecaf"
@@ -52,22 +62,28 @@
     <TextView
         android:id="@+id/textViewAddToCoffee"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="27dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="190dp"
-        android:text="What else do you like in your coffee ?" />
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="12dp"
+        android:text="What else do you like in your coffee ?"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/sugarChkBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <CheckBox
         android:id="@+id/creamChkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="93dp"
+        android:layout_height="22dp"
         android:layout_alignStart="@+id/txtViewCoffeeReq"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="276dp"
-        android:text="Cream" />
+        android:layout_marginBottom="242dp"
+        android:text="Cream"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/sugarChkBox"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <CheckBox
         android:id="@+id/sugarChkBox"
@@ -75,9 +91,10 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/txtViewCoffeeReq"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="244dp"
-        android:text="Sugar" />
+        android:layout_marginStart="24dp"
+        android:text="Sugar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAddToCoffee" />
 
     <Button
         android:id="@+id/btnOrder"
@@ -85,7 +102,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="66dp"
-        android:text="Make an order" />
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="91dp"
+        android:text="Make an order"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/creamChkBox"
+        app:layout_constraintTop_toBottomOf="@+id/creamChkBox" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

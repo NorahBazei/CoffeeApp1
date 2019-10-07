@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     public void moveTofrstAct(View v){
 
         Intent i = new Intent(getApplicationContext(), frstActivity.class);
-        startActivityForResult(i,1000);
+        startActivityForResult(i,1);
 
     }
 
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
 
         // To check if the operation is successful and the it's my result
-        if(resultCode == RESULT_OK && requestCode == 1000){
+        if(resultCode == RESULT_OK && requestCode == 1){
 
             // To extract data from intent
             String order = "Order is: "+ data.getStringExtra("coffee_Type") +
